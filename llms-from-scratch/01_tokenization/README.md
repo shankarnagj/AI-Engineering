@@ -1,58 +1,52 @@
-# 🔤 Tokenization in LLMs
+# 🧩 Tokenization in LLMs — From Scratch
 
-Before any LLM can learn or generate text, it must first **tokenize** raw input — breaking it down into a sequence of tokens. This folder explores the core tokenization strategies used in modern language models.
-
----
-
-## 📒 Notebooks in This Folder
-
-| Notebook | Description |
-|----------|-------------|
-| `notebook_01_word_tokenizer.ipynb` | Basic word-level tokenizer using whitespace split — simple, but not robust |
-| `notebook_02_bpe_tokenizer.ipynb` | Byte Pair Encoding tokenizer — merges frequent character pairs iteratively |
-| `notebook_03_wordpiece_tokenizer.ipynb` | WordPiece tokenizer — uses statistical scoring for merges (used in BERT) |
-| `notebook_04_unigram_tokenizer.ipynb` | Unigram tokenizer — uses probabilistic scoring for best segmentation (T5-style) |
-| `notebook_05_bytelevel_bpe.ipynb` | *(Upcoming)* Byte-level BPE — operates at byte level for full UTF-8 handling |
+Tokenization is the **first step in training a language model**, where raw text is converted into a sequence of tokens (words, subwords, or bytes). In this module, we explore and implement all major tokenization techniques used in today's LLMs — **from basic word tokenizers to advanced byte-level encoders.**
 
 ---
 
-## 🧠 Tokenizer Concepts
+## 🧠 Why Tokenization Matters
 
-### 🧩 Word-Level Tokenizer
-- Example: `"The cat sat"` → `["The", "cat", "sat"]`
-- Simple, intuitive
-- ❌ Poor handling of rare words and typos
-
----
-
-### 🪄 Byte Pair Encoding (BPE)
-- Merges frequent character pairs into subwords
-- Example: `"lowest"` → `["low", "est"]`, `"lower"` → `["low", "er"]`
-- Used in: **GPT-2**, RoBERTa
+Tokenizers:
+- Define the vocabulary a model learns from
+- Affect model size, speed, and language support
+- Enable handling of rare words, emojis, and multilingual input
 
 ---
 
-### 🧠 WordPiece Tokenizer
-- Greedy + frequency-based scoring
-- Example: `"unwanted"` → `["un", "##want", "##ed"]`
-- Used in: **BERT**, DistilBERT
+## ✅ Tokenizers Implemented
+
+| Notebook | Tokenizer Type | Description |
+|----------|----------------|-------------|
+| `notebook_01_word_tokenizer.ipynb` | Word-level | Splits text on whitespace/punctuation. Simple but limited (used in early NLP). |
+| `notebook_02_bpe_tokenizer.ipynb` | Byte Pair Encoding (BPE) | Greedy subword tokenizer used in GPT-2. Merges frequent character pairs. |
+| `notebook_03_wordpiece_tokenizer.ipynb` | WordPiece | Subword tokenizer used in BERT. Balances vocab compactness and coverage. |
+| `notebook_04_unigram_tokenizer.ipynb` | Unigram Language Model | Probabilistic tokenizer used in T5, XLNet, SentencePiece. Learns best subwords via LM likelihood. |
+| `notebook_05_bytelevel_bpe.ipynb` | Byte-Level BPE | Operates on raw UTF-8 bytes. Handles emojis, multilingual text, special symbols (used in GPT-3). |
 
 ---
 
-### 🎲 Unigram Tokenizer
-- Probabilistic: tries all segmentations, picks the most likely
-- Example: `"newest"` → `["ne", "west"]` or `["new", "est"]` based on score
-- Used in: **T5**, **ALBERT**, SentencePiece
+## 🛠️ Improvements and Enhancements
+
+- Added **robust handling for mixed byte/character types** in Byte-Level BPE.
+- Optimized **flattening logic** for nested byte merge outputs.
+- Ensured **correct performance** of tokenizers on UTF-8 encoded input.
+- Included **detailed code comments and markdown explanations** in each notebook to enhance learning and clarity.
+- Fully aligns with how tokenization is used in real-world LLMs.
 
 ---
 
-### 🧬 Byte-Level BPE *(Coming Soon)*
-- Operates on **raw bytes**, not characters
-- Great for emojis, rare symbols, multilingual input
-- Used in: **GPT-3**, **Codex**, **OpenAI Tokenizer**
+## 🧪 Suggested Add-ons (Optional Notebooks)
+
+| Notebook | Idea |
+|----------|------|
+| `notebook_06_tokenizer_comparison.ipynb` | Benchmark all tokenizers on text length, token count, and vocabulary size. |
+| `notebook_07_vocab_stats.ipynb` | Analyze token distribution, merge steps, and frequency. |
+| `notebook_08_tokenizer_integration.ipynb` | Connect tokenizer outputs to embedding layers. |
 
 ---
 
-## 🎯 Goal
+## 🚀 What's Next?
 
-By the end of this folder, you'll understand how modern LLMs preprocess raw text — the critical first step in any language modeling pipeline.
+➡️ Move to the **Embeddings** module (`02_embeddings/`)  
+Here we’ll convert these tokens into vector representations the model can learn from.
+
