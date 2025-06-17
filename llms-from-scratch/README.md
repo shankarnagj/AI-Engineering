@@ -1,40 +1,57 @@
-# LLMs from Scratch
-# 🧠 LLMs From Scratch
+# 🧠 LLMs from Scratch
 
-This section focuses on building a **Large Language Model** from the ground up — starting with tokenization and progressing toward a minimal transformer model implementation.
+Welcome to the **LLMs from Scratch** playground — a curated, hands-on repo for learning how to build and understand **Large Language Models (LLMs)** from the ground up.
 
-You'll explore:
-- ✅ Tokenization (word-level, BPE, WordPiece)
-- ✅ Vocabulary creation & encoding
-- ✅ Embeddings & positional encoding
-- ✅ Multi-head self-attention
-- ✅ Transformer encoder/decoder
-- ✅ Pretraining objectives (e.g., Masked LM, Causal LM)
-
-Whether you're a learner or builder, this path is hands-on and highly educational.
+This is not just about code. It's about **internalizing the mechanics** of GPT, BERT, T5, and beyond.
 
 ---
 
-## 📚 Recommended Books
+## 🧱 Folder Structure & Topics
 
-### 1. **"The Annotated Transformer" (Harvard NLP)**
-- 📖 *By Alexander Rush*
-- 🔗 [https://nlp.seas.harvard.edu/annotated-transformer/](https://nlp.seas.harvard.edu/annotated-transformer/)
-- A line-by-line explanation of the original transformer paper in PyTorch.
-
-### 2. **"Natural Language Processing with Transformers"**
-- 📖 *By Lewis Tunstall, Leandro von Werra, and Thomas Wolf (Hugging Face)*
-- Covers building, training, and deploying transformer-based models in practical settings.
-- 🔗 [https://transformersbook.com/](https://transformersbook.com/)
-
----
-
-## 🧪 Notebooks in This Folder
-
-| Notebook                         | Description                         |
-|----------------------------------|-------------------------------------|
-| `notebook_01_tokenizer.ipynb`   | Implements a simple word-level tokenizer |
+| 📁 Folder | What You'll Learn |
+|----------|-------------------|
+| `01_tokenization/` | Word, BPE, WordPiece, Unigram, and Byte-level BPE — the building blocks of LLM input |
+| `02_embeddings/` | Learnable embeddings, positional encodings, and how LLMs encode token meaning |
+| `03_transformer_core/` | Self-attention, transformer blocks, and building a minimal GPT model |
+| `04_modern_tweaks/` | LoRA, FlashAttention, vocab compression — modern fine-tuning and efficiency tricks |
+| `books/` | 📚 Recommended books on LLMs, NLP, and Deep Learning |
+| `papers/` | 🧾 Research papers with notes and implementation insights |
 
 ---
 
-💡 Coming soon: Byte-Pair Encoding (BPE), Transformer blocks, and a nano-GPT model!
+## 🧪 Notebook Progress
+
+- ✅ Tokenization: BPE, WordPiece, Unigram ✔️
+- 🔜 Byte-level BPE (GPT-3 style)
+- ⏳ Embeddings → Transformers → Training Loop
+- 🚀 Finetuning with LoRA, FlashAttention
+
+---
+
+## 📘 Ideal For
+
+- ML engineers curious about LLM internals
+- NLP practitioners building custom transformers
+- Students or researchers looking to go *beyond huggingface*
+
+---
+
+## ✨ Goals
+
+- Learn by building — tokenizer to transformer
+- Recreate GPT-style architectures piece by piece
+- Go deep into pretraining, inference, and optimization
+
+---
+
+## 💡 Coming Soon
+
+- Inference pipeline
+- Custom datasets + streaming
+- GPT2-mini pretraining with MLM/CLM
+- Agentic LLMs (next repo)
+
+---
+
+> 🔗 Contributions & discussions welcome. Fork it, break it, learn from it. This is the *cleanroom lab* for LLM mastery.
+
