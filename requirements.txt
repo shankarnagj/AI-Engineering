@@ -1,0 +1,7 @@
+# Main dependencies
+langchain
+openai
+llama-index
+faiss-cpu
+streamlit
+fastapi
